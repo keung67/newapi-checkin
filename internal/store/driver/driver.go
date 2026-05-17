@@ -209,7 +209,7 @@ func FormatQuotaYuanFixed(value int64) string {
 	yuan := value / QuotaYuanRate
 	fraction := value % QuotaYuanRate
 	decimal := fraction * 1000000 / QuotaYuanRate
-	return fmt.Sprintf("%s¥%d.%06d", sign, yuan, decimal)
+	return fmt.Sprintf("%s$%d.%06d", sign, yuan, decimal)
 }
 
 // Register 注册数据库驱动

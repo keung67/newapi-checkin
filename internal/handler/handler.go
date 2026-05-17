@@ -613,7 +613,7 @@ func formatQuotaYuan(value int64) string {
 
 	yuan := value / rate
 	fraction := (value % rate) * 100 / rate
-	result := sign + "￥" + strconv.FormatInt(yuan, 10)
+	result := sign + "$" + strconv.FormatInt(yuan, 10)
 	if fraction == 0 {
 		return result
 	}

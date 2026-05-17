@@ -1,29 +1,29 @@
 :root {
-  /* 暖色调底色与光晕调色板（替换原有的线性渐变变量） */
-  --bg-base: #fffaf5;      /* 极浅的暖白底色 */
-  --bg-glow-1: #ffe8cc;    /* 奶油黄光晕 */
-  --bg-glow-2: #ffdac7;    /* 柔和橘红光晕 */
-  --bg-glow-3: #fcd5ce;    /* 蜜桃浅粉光晕 */
+  /* 淡蓝调底色与光晕调色板 */
+  --bg-base: #f5faff;      /* 极浅的淡蓝白底色 */
+  --bg-glow-1: #e0f2fe;    /* 淡天蓝光晕 */
+  --bg-glow-2: #eef2ff;    /* 柔和淡紫蓝光晕 */
+  --bg-glow-3: #e0f7fa;    /* 浅青蓝光晕 */
 
-  --card-bg: rgba(255, 253, 250, 0.95);
-  --text-main: #5c4033; /* 咖啡色，比纯黑更温暖 */
-  --text-muted: #9e7a66; /* 奶茶色 */
-  --accent-primary: #f2855e; /* 柔和的橘红色 */
-  --accent-hover: #e06c43;
-  --accent-light: #fff0ea;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-main: #1e3a8a; /* 深蓝色，比纯黑更优雅 */
+  --text-muted: #64748b; /* 灰蓝色 */
+  --accent-primary: #3b82f6; /* 活力淡蓝 */
+  --accent-hover: #2563eb;
+  --accent-light: #eff6ff;
   
   /* 状态颜色调整为柔和的马卡龙色 */
-  --ok-bg: #edf7ed;
-  --ok-text: #4caf50;
-  --ok-border: #c8e6c9;
+  --ok-bg: #ecfdf5;
+  --ok-text: #10b981;
+  --ok-border: #d1fae5;
   
-  --err-bg: #fdecea;
-  --err-text: #ef5350;
-  --err-border: #ffcdd2;
+  --err-bg: #fef2f2;
+  --err-text: #ef4444;
+  --err-border: #fee2e2;
 
   --border-radius-lg: 32px;
   --border-radius-md: 20px;
-  --shadow-soft: 0 20px 50px rgba(242, 133, 94, 0.15);
+  --shadow-soft: 0 20px 50px rgba(59, 130, 246, 0.15);
   --shadow-inner: inset 0 2px 4px rgba(255, 255, 255, 0.8);
 }
 
@@ -32,7 +32,7 @@
 }
 
 /* 动态光晕游动效果 */
-@keyframes warmGlow {
+@keyframes softGlow {
   0% { background-position: 0% 0%; }
   50% { background-position: 100% 100%; }
   100% { background-position: 0% 0%; }
@@ -51,7 +51,7 @@ body {
     radial-gradient(circle at 50% 50%, var(--bg-glow-3), transparent 60%),
     var(--bg-base);
   background-size: 200% 200%;
-  animation: warmGlow 20s ease-in-out infinite alternate;
+  animation: softGlow 20s ease-in-out infinite alternate;
 
   display: grid;
   place-items: center;
@@ -170,7 +170,7 @@ body {
   align-items: center;
   gap: 16px;
   background: var(--accent-light);
-  border: 1px solid rgba(242, 133, 94, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: var(--border-radius-md);
   padding: 20px;
   transition: transform 0.2s ease;
@@ -189,7 +189,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(242, 133, 94, 0.08);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
 }
 
 .stat .label {
@@ -256,8 +256,8 @@ body {
   min-height: 88px;
   padding: 12px;
   border-radius: var(--border-radius-md);
-  border: 1px solid rgba(242, 133, 94, 0.14);
-  background: rgba(255, 240, 234, 0.72);
+  border: 1px solid rgba(59, 130, 246, 0.14);
+  background: rgba(239, 246, 255, 0.72);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -293,13 +293,13 @@ body {
 .primary {
   background: var(--accent-primary);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(242, 133, 94, 0.3);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
 }
 
 .primary:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(242, 133, 94, 0.4);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.4);
 }
 
 .primary:active {
@@ -307,18 +307,18 @@ body {
 }
 
 .secondary {
-  background: #f5f0ec;
+  background: #f1f5f9;
   color: var(--text-muted);
 }
 
 .secondary:hover {
-  background: #ebe4df;
+  background: #e2e8f0;
   color: var(--text-main);
 }
 
 .disabled {
-  background: #f5f0ec;
-  color: #c2b4ab;
+  background: #f1f5f9;
+  color: #94a3b8;
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -349,7 +349,7 @@ body {
 /* 底部详情 */
 .detail {
   text-align: center;
-  border-top: 1px dashed rgba(158, 122, 102, 0.2);
+  border-top: 1px dashed rgba(100, 116, 139, 0.2);
   padding-top: 24px;
   color: var(--text-muted);
   font-size: 13px;
@@ -358,7 +358,7 @@ body {
 
 code {
   font-family: Consolas, "SFMono-Regular", monospace;
-  background: #f5f0ec;
+  background: #f1f5f9;
   color: var(--text-main);
   padding: 3px 8px;
   border-radius: 6px;
@@ -372,10 +372,10 @@ code {
 
 .leaderboard-hero {
   padding: 32px 28px 20px;
-  border-bottom: 1px solid rgba(242, 133, 94, 0.12);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.12);
   background:
-    radial-gradient(circle at top left, rgba(255, 232, 204, 0.9), transparent 48%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 248, 241, 0.7));
+    radial-gradient(circle at top left, rgba(224, 242, 254, 0.9), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(248, 250, 252, 0.7));
 }
 
 .leaderboard-eyebrow {
@@ -407,8 +407,8 @@ code {
   margin: 0;
   padding: 18px 16px;
   border-radius: var(--border-radius-md);
-  background: rgba(255, 240, 234, 0.72);
-  border: 1px solid rgba(242, 133, 94, 0.12);
+  background: rgba(239, 246, 255, 0.72);
+  border: 1px solid rgba(59, 130, 246, 0.12);
   color: var(--text-muted);
   text-align: center;
   font-weight: 700;
@@ -429,9 +429,9 @@ code {
   align-items: center;
   padding: 16px 14px;
   border-radius: 22px;
-  background: rgba(255, 248, 241, 0.92);
-  border: 1px solid rgba(242, 133, 94, 0.12);
-  box-shadow: 0 12px 28px rgba(242, 133, 94, 0.08);
+  background: rgba(248, 250, 252, 0.92);
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  box-shadow: 0 12px 28px rgba(59, 130, 246, 0.08);
 }
 
 .leaderboard-rank {
@@ -441,7 +441,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #fff4eb, #ffe6d7);
+  background: linear-gradient(180deg, #eff6ff, #dbeafe);
   color: var(--accent-hover);
   font-size: 20px;
   font-weight: 800;

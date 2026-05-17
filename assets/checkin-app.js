@@ -564,9 +564,9 @@
     const yuan = Math.floor(absolute / rate)
     const fraction = Math.floor((absolute % rate) * 100 / rate)
     if (fraction === 0) {
-      return sign + "￥" + yuan
+      return sign + "$" + yuan
     }
     const decimal = String(fraction).padStart(2, "0").replace(/0+$/, "")
-    return sign + "￥" + yuan + "." + decimal
+    return sign + "$" + yuan + "." + decimal
   }
 })()
